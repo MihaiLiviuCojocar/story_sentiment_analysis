@@ -1,4 +1,5 @@
 require 'mongoid'
+require './app/models/company'
 
 env = ENV['RACK_ENV'] || 'development'
 
