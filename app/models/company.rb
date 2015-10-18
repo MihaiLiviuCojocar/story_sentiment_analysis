@@ -5,4 +5,6 @@ class Company
 
   field :name,       type: String
   field :tickerCode, type: String
+
+  store_in collection: 'company'
 end

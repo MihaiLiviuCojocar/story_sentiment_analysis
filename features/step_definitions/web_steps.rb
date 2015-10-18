@@ -3,9 +3,9 @@ Given(/^A company called "([^"]*)" has been added$/) do |company_name|
 end
 
 When(/^I visit the homepage$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit '/'
 end
 
 Then(/^I should see "([^"]*)"$/) do |text|
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content text
 end
