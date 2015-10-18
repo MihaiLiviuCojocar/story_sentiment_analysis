@@ -1,4 +1,12 @@
-%h1 All companies
-
-- @companies.each do |company|
-  %h4= company.name
+%main.container
+  %h1 All companies
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Name
+        %th Ticker Code
+    - @companies.each do |company|
+      %tr
+        %td
+          %a(href="#")= company.name
+        %td= company.tickerCode
