@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'tilt/haml'
 require './db_config/env'
 
 class TechTest < Sinatra::Base
