@@ -1,0 +1,16 @@
+development:
+  clients:
+    default:
+      database: mm-recruitment
+      hosts:
+        - ds037551.mongolab.com:37551
+      options:
+        user: mm_recruitment_user_readonly
+        password: rebelMutualWhistle
+
+test:
+  clients:
+    default:
+      database: mm-recruitment-test
+      hosts:
+        - localhost:27017
