@@ -10,4 +10,10 @@ describe Company do
   it 'has a ticker code' do
     expect(company.tickerCode).to eq 'APPL'
   end
+
+  context 'before making api calls for details' do
+    it 'has price "N/A"' do
+      expect(company.latest_price).to eq 'N/A'
+    end
+  end
 end

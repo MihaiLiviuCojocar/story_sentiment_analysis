@@ -7,4 +7,8 @@ class Company
   field :tickerCode, type: String
 
   store_in collection: 'company'
+
+  def latest_price
+    'N/A'
+  end
 end
