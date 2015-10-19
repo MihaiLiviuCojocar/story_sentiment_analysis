@@ -6,6 +6,7 @@ class CompanyDetailsReader
 
   def initialize(ticker_code)
     @ticker_code = ticker_code
+    self
   end
 
   def retrieve_data

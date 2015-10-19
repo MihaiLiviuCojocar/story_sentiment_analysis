@@ -17,3 +17,10 @@ Feature: Company card
       | Latest Price   | N/A  |
       | As Of          | N/A  |
       | Latest Stories | N/A  |
+
+  Scenario: The company is found but there is no story feed
+    Then I should see:
+      | Ticker Code    | AAPL        |
+      | Latest Price   | 1945        |
+      | As Of          | 2014-10-19  |
+      | Latest Stories | N/A         |
