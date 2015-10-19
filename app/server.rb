@@ -13,7 +13,7 @@ class TechTest < Sinatra::Base
 
   get '/companies/:ticker_code' do
     @company = Company.where(tickerCode: params[:ticker_code]).first
-    @details = JSON.parse(CompanyDetailsReader.new(@company.tickerCode).retrieve_data)
+    @company.retrieve_data
     haml :"companies/show"
   end
 end
