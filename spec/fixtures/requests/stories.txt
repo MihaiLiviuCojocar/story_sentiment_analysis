@@ -10,12 +10,12 @@ Via: 1.1 vegur
 [
   {
     "id": 12,
-    "headline": "Apple aggressively targeting Chinese market",
+    "headline": "Going strong",
     "body": "Apple Inc is rapidly making ground ..."
   },
   {
     "id": 17,
-    "headline": "Stocks plunge, Apple amongst biggest losers",
+    "headline": "Google revenue",
     "body": "Stocks finished sharply lower in New York ..."
   }
 ]
