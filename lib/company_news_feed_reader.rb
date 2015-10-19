@@ -3,6 +3,7 @@ class CompanyNewsFeedRader
 
   def initialize(uri)
     @uri = uri
+    self
   end
 
   def retrieve_data
