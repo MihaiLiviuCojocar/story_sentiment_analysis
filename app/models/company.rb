@@ -11,4 +11,12 @@ class Company
   def latest_price
     'N/A'
   end
+
+  def latest_stories
+    'N/A'
+  end
+
+  def as_of
+    'N/A'
+  end
 end

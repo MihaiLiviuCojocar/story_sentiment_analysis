@@ -15,5 +15,13 @@ describe Company do
     it 'has price "N/A"' do
       expect(company.latest_price).to eq 'N/A'
     end
+
+    it 'has latest stories as "N/A"' do
+      expect(company.latest_stories).to eq 'N/A'
+    end
+
+    it 'has time as "N/A"' do
+      expect(company.as_of).to eq 'N/A'
+    end
   end
 end
