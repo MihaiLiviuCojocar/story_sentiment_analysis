@@ -29,7 +29,11 @@ describe Company do
     context 'when company not found' do
       let(:company_not_available) { Company.new(name: 'John Doe', tickerCode: 'JDOE') }
 
-      before do
+      before(:each) do
+        stub_request(
+          :any,
+          'http://mm-recruitment-stock-price-api.herokuapp.com/company/JDOE')
+        .to_return(File.new('spec/fixtures/requests/company_not_found.txt'))
         company_not_available.retrieve_data
       end
 
@@ -47,9 +51,13 @@ describe Company do
     end
 
     context 'when company found but with no link for stories news feed' do
-      let(:company) { Company.new(name: 'Apple Inc', tickerCode: 'APPL') }
+      let(:company) { Company.new(name: 'Apple Inc', tickerCode: 'AAPL') }
 
-      before do
+      before(:each) do
+        stub_request(
+          :any,
+          'http://mm-recruitment-stock-price-api.herokuapp.com/company/AAPL')
+        .to_return(File.new('spec/fixtures/requests/company_without_story_feed.txt'))
         company.retrieve_data
       end
 
