@@ -26,20 +26,31 @@ describe Company do
   end
 
   context 'after making api calls' do
-    context 'company not found' do
+    context 'when company not found' do
       let(:company_not_available) { Company.new(name: 'John Doe', tickerCode: 'JDOE') }
 
-      it 'has price "N/A"' do
+      before do
         company_not_available.retrieve_data
+      end
+
+      it 'has price "N/A"' do
         expect(company_not_available.latest_price).to eq 'N/A'
+      end
+
+      it 'has latest stories as "N/A"' do
+        expect(company_not_available.latest_stories).to eq 'N/A'
+      end
+
+      it 'has time as "N/A"' do
+        expect(company_not_available.as_of).to eq 'N/A'
       end
     end
 
-    context 'company found but with no link for stories news feed' do
+    context 'when company found but with no link for stories news feed' do
       
     end
 
-    context 'company found and all data is available' do
+    context 'when company found and all data is available' do
       
     end
   end

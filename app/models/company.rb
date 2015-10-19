@@ -19,4 +19,8 @@ class Company
   def as_of
     'N/A'
   end
+
+  def retrieve_data
+    
+  end
 end
