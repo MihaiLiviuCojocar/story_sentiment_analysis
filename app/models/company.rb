@@ -21,6 +21,6 @@ class Company
   end
 
   def retrieve_data
-    
+    @data = CompanyDetailsReader.new(tickerCode).retrieve_data
   end
 end

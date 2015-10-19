@@ -47,7 +47,15 @@ describe Company do
     end
 
     context 'when company found but with no link for stories news feed' do
-      
+      let(:company) { Company.new(name: 'Apple Inc', tickerCode: 'APPL') }
+
+      before do
+        company.retrieve_data
+      end
+
+      it 'has price set to 1945' do
+        expect(company.latest_price).to eq '1945'
+      end
     end
 
     context 'when company found and all data is available' do
