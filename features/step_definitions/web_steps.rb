@@ -20,3 +20,10 @@ Then(/^I should be on the "([^"]*)" card page$/) do |company_name|
   expect(page.status_code).to eq 200
   expect(page.current_path).to eq "/companies/#{ticker_code}"
 end
+
+Then(/^I should see:$/) do |table|
+  values = table.raw.flatten
+  values.each do |value|
+    expect(page).to have_content value
+  end
+end
