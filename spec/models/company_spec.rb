@@ -33,7 +33,7 @@ describe Company do
         stub_request(
           :any,
           'http://mm-recruitment-stock-price-api.herokuapp.com/company/JDOE')
-        .to_return(File.new('spec/fixtures/requests/company_not_found.txt'))
+        .to_return(File.new('spec/fixtures/requests/company_not_found.txt'), status: 404)
         company_not_available.retrieve_data
       end
 
@@ -61,8 +61,8 @@ describe Company do
         company.retrieve_data
       end
 
-      it 'has price set to 1945' do
-        expect(company.latest_price).to eq '1945'
+      it 'has price set to the found value' do
+        expect(company.latest_price).to eq 1945
       end
     end
 

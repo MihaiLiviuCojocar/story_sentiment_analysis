@@ -8,19 +8,23 @@ class Company
 
   store_in collection: 'company'
 
+  NOT_AVAILABLE_YET = 'N/A'
+
   def latest_price
-    'N/A'
+    @latest_price || NOT_AVAILABLE_YET
   end
 
   def latest_stories
-    'N/A'
+    NOT_AVAILABLE_YET
   end
 
   def as_of
-    'N/A'
+    NOT_AVAILABLE_YET
   end
 
   def retrieve_data
-    @data = CompanyDetailsReader.new(tickerCode).retrieve_data
+    parsed = JSON.parse(CompanyDetailsReader.new(tickerCode).retrieve_data)
+    @latest_price   = parsed["latestPrice"]
+    self
   end
 end

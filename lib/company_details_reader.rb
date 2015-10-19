@@ -11,10 +11,7 @@ class CompanyDetailsReader
 
   def retrieve_data
     response = HTTParty.get(BASE_URI + ticker_code)
-    if response.code != 404
-      response.body
-    else
-      { "message": "Not Found" }.to_json
-    end
+    return response.body unless response.code == 404
+    { "message": "Not Found" }.to_json
   end
 end
