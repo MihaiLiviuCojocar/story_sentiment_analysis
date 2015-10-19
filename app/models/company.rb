@@ -36,10 +36,25 @@ class Company
     @price_units    = parsed["priceUnits"]
     @as_of          = parsed["asOf"]
     @story_feed_uri = parsed["storyFeedUrl"]
+
+    if has_stories?
+      stories = JSON.parse(CompanyNewsFeedRader.new(story_feed_uri).retrieve_data)
+      stories.each do |story|
+        add_story(Story.new(
+          id: story["id"],
+          headline: story["headline"],
+          body: story["body"])
+        )
+      end
+    end
     self
   end
 
   private
+
+  def add_story(story)
+    @latest_stories = latest_stories.append(story)
+  end
 
   def has_stories?
     story_feed_uri != NOT_AVAILABLE_YET

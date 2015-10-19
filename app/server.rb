@@ -2,6 +2,8 @@ require 'sinatra'
 require 'tilt/haml'
 require './db_config/env'
 require './lib/company_details_reader'
+require './lib/company_news_feed_reader'
+require './lib/story'
 
 class TechTest < Sinatra::Base
   get '/' do
