@@ -15,6 +15,7 @@ class Story
   end
 
   def sentiment_analysis
+    return :positive if positivity_score >= 2
     :neutral
   end
 

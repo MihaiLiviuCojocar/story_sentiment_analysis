@@ -61,6 +61,11 @@ describe Story do
   context 'sentiment analysis' do
     it 'returns a positive sentiment analysis given a score of 2' do
       allow(story).to receive(:positivity_score).and_return(2)
+      expect(story.sentiment_analysis).to eq :positive
+    end
+
+    it 'returns a neutral sentiment analysis given a score of 1' do
+      allow(story).to receive(:positivity_score).and_return(1)
       expect(story.sentiment_analysis).to eq :neutral
     end
   end
