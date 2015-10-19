@@ -14,6 +14,10 @@ class Story
     words.reduce(0) { |memo, word| memo + score_for_word(word) }
   end
 
+  def sentiment_analysis
+    :neutral
+  end
+
   private
 
   def words

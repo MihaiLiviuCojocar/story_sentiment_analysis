@@ -15,7 +15,7 @@ describe Story do
     expect(story.body).to eq 'Some text body'
   end
 
-  context 'sentiment analysis' do
+  context 'positivity score calculation' do
     it 'calculates a positivity of 0 given 6 positive words and 6 negative words' do
       story = Story.new(
         id: 12,
@@ -55,6 +55,13 @@ describe Story do
               dissapointing, concerns, decline, drag, slump, feared')
 
       expect(story.positivity_score).to eq -3
+    end
+  end
+
+  context 'sentiment analysis' do
+    it 'returns a positive sentiment analysis given a score of 2' do
+      allow(story).to receive(:positivity_score).and_return(2)
+      expect(story.sentiment_analysis).to eq :neutral
     end
   end
 end
