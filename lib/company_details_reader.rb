@@ -1,0 +1,3 @@
+class CompanyDetailsReader
+  
+end
