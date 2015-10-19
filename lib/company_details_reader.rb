@@ -9,6 +9,6 @@ class CompanyDetailsReader
   end
 
   def retrieve_data
-    HTTParty.get(BASE_URI + ticker_code)
+    HTTParty.get(BASE_URI + ticker_code).body
   end
 end
