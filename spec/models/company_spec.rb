@@ -64,6 +64,14 @@ describe Company do
       it 'has price set to the found value' do
         expect(company.latest_price).to eq 1945
       end
+
+      it 'has price units set to found value' do
+        expect(company.price_units).to eq 'GBP:pence'
+      end
+
+      it 'has story feed uri undifined' do
+        expect(company.story_feed_uri).to eq 'N/A'
+      end
     end
 
     context 'when company found and all data is available' do
