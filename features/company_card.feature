@@ -24,3 +24,21 @@ Feature: Company card
       | Latest Price   | 1945        |
       | As Of          | 2014-10-19  |
       | Latest Stories | N/A         |
+
+  Scenario: The company is found and it has a story feed
+    Given A company
+      | name       | ticker_code |
+      | Google Inc | GOOG        |
+    And I visit the homepage
+    When I click on "Google Inc"
+    Then I should see:
+      | Ticker Code    | GOOG           |
+      | Latest Price   | 54407          |
+      | As Of          | 2014-10-19     |
+      | Latest Stories |                |
+      | Headline       | Going strong   |
+      | Headline       | Google revenue |
+
+
+
+
