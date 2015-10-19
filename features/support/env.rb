@@ -14,13 +14,21 @@ include WebMock::API
 Before do
   stub_request(
     :any,
-    'http://mm-recruitment-stock-price-api.herokuapp.com/company/AAPL'
-    ).to_return(File.new('spec/fixtures/requests/company_without_story_feed.txt'))
+    'http://mm-recruitment-stock-price-api.herokuapp.com/company/AAPL')
+    .to_return(File.new('spec/fixtures/requests/company_without_story_feed.txt')
+  )
 
-    stub_request(
+  stub_request(
     :any,
-    'http://mm-recruitment-stock-price-api.herokuapp.com/company/GOOG'
-    ).to_return(File.new('spec/fixtures/requests/company_with_story_feed.txt'))  
+    'http://mm-recruitment-stock-price-api.herokuapp.com/company/GOOG')
+    .to_return(File.new('spec/fixtures/requests/company_with_story_feed.txt')
+  )
+
+  stub_request(
+    :any,
+    'http://mm-recruitment-story-feed-api.herokuapp.com/8271')
+    .to_return(File.new('spec/fixtures/requests/stories.txt')
+  )
 end
 
 Capybara.app = TechTest
