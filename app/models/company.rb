@@ -50,13 +50,13 @@ class Company
     self
   end
 
+  def has_stories?
+    story_feed_uri != NOT_AVAILABLE_YET
+  end
+
   private
 
   def add_story(story)
     @latest_stories = latest_stories.append(story)
-  end
-
-  def has_stories?
-    story_feed_uri != NOT_AVAILABLE_YET
   end
 end
