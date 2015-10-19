@@ -10,4 +10,5 @@ group :development, :test do
   gem 'capybara'
   gem 'rspec'
   gem 'webmock'
+  gem 'launchy'
 end
