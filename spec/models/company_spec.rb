@@ -69,13 +69,29 @@ describe Company do
         expect(company.price_units).to eq 'GBP:pence'
       end
 
-      it 'has story feed uri undifined' do
+      it 'has story feed uri unidentified' do
         expect(company.story_feed_uri).to eq 'N/A'
+      end
+
+      it 'has the time set to found value' do
+        expect(company.as_of).to eq '2014-10-19T14:06:52.609Z'
       end
     end
 
     context 'when company found and all data is available' do
-      
+      let(:company) { Company.new(name: 'Google Inc', tickerCode: 'GOOG') }
+
+      before(:each) do
+        stub_request(
+          :any,
+          'http://mm-recruitment-stock-price-api.herokuapp.com/company/GOOG')
+        .to_return(File.new('spec/fixtures/requests/company_with_story_feed.txt'))
+        company.retrieve_data
+      end
+
+      it 'has the story feed uri set to the found value' do
+        expect(company.story_feed_uri).to eq 'http://mm-recruitment-story-feed-api.herokuapp.com/8271'
+      end
     end
   end
 end

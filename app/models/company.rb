@@ -19,7 +19,7 @@ class Company
   end
 
   def as_of
-    NOT_AVAILABLE_YET
+    @as_of || NOT_AVAILABLE_YET
   end
 
   def price_units
@@ -27,13 +27,15 @@ class Company
   end
 
   def story_feed_uri
-    NOT_AVAILABLE_YET
+    @story_feed_uri || NOT_AVAILABLE_YET
   end
 
   def retrieve_data
     parsed = JSON.parse(CompanyDetailsReader.new(tickerCode).retrieve_data)
-    @latest_price = parsed["latestPrice"]
-    @price_units  = parsed["priceUnits"]
+    @latest_price   = parsed["latestPrice"]
+    @price_units    = parsed["priceUnits"]
+    @as_of          = parsed["asOf"]
+    @story_feed_uri = parsed["storyFeedUrl"]
     self
   end
 end
