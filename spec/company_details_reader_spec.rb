@@ -8,8 +8,9 @@ describe CompanyDetailsReader do
   end
 
   it 'can make a GET request to an external web service' do
-    expect(HTTParty).to receive(:get).with(
-      "#{CompanyDetailsReader::BASE_URI}" + reader.ticker_code)
+    request_uri = (CompanyDetailsReader::BASE_URI + reader.ticker_code).to_s
+    
+    expect(HTTParty).to receive(:get).with(request_uri)
     reader.retrieve_data
   end
 end
