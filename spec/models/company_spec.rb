@@ -94,7 +94,6 @@ describe Company do
       end
 
       it 'sets the stories if there is a story feed uri' do
-
         expect(company.latest_stories).not_to eq []
       end
     end
