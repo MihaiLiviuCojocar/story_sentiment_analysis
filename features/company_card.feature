@@ -32,12 +32,14 @@ Feature: Company card
     And I visit the homepage
     When I click on "Google Inc"
     Then I should see:
-      | Ticker Code    | GOOG           |
-      | Latest Price   | 54407          |
-      | As Of          | 2015-10-19     |
-      | Latest Stories |                |
-      | Headline       | Going strong   |
-      | Headline       | Google revenue |
+      | Ticker Code    | GOOG            |
+      | Latest Price   | 54407           |
+      | As Of          | 2015-10-19      |
+      | Latest Stories |                 |
+      | Headline       | Going strong    |
+      | Body           | Apple Inc is    |
+      | Headline       | Google revenue  | 
+      | Body           | Stocks finished |
 
 
 
