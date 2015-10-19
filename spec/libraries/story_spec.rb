@@ -14,4 +14,17 @@ describe Story do
   it 'has a body' do
     expect(story.body).to eq 'Some text body'
   end
+
+  context 'sentiment analysis' do
+    let(:story) { Story.new(
+      id: 12,
+      headline: 'Some headline',
+      body: 'positive, success, grow, gains, happy, healthy,
+            dissaponting, concerns, decline, drag, slump, feared'
+      )}
+
+    it 'can count positive words' do
+      expect(story.positive_words_count).to eq 6
+    end
+  end
 end
