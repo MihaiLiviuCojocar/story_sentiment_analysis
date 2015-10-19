@@ -34,7 +34,7 @@ Feature: Company card
     Then I should see:
       | Ticker Code    | GOOG           |
       | Latest Price   | 54407          |
-      | As Of          | 2014-10-19     |
+      | As Of          | 2015-10-19     |
       | Latest Stories |                |
       | Headline       | Going strong   |
       | Headline       | Google revenue |
