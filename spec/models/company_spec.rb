@@ -16,8 +16,8 @@ describe Company do
       expect(company.latest_price).to eq 'N/A'
     end
 
-    it 'has latest stories as "N/A"' do
-      expect(company.latest_stories).to eq 'N/A'
+    it 'has latest stories empty' do
+      expect(company.latest_stories).to eq []
     end
 
     it 'has time as "N/A"' do
@@ -41,8 +41,8 @@ describe Company do
         expect(company_not_available.latest_price).to eq 'N/A'
       end
 
-      it 'has latest stories as "N/A"' do
-        expect(company_not_available.latest_stories).to eq 'N/A'
+      it 'has latest stories empty' do
+        expect(company_not_available.latest_stories).to eq []
       end
 
       it 'has time as "N/A"' do
@@ -91,6 +91,11 @@ describe Company do
 
       it 'has the story feed uri set to the found value' do
         expect(company.story_feed_uri).to eq 'http://mm-recruitment-story-feed-api.herokuapp.com/8271'
+      end
+
+      it 'sets the stories if there is a story feed uri' do
+
+        expect(company.latest_stories).not_to eq []
       end
     end
   end

@@ -15,7 +15,7 @@ class Company
   end
 
   def latest_stories
-    NOT_AVAILABLE_YET
+    @latest_stories || []
   end
 
   def as_of
@@ -37,5 +37,11 @@ class Company
     @as_of          = parsed["asOf"]
     @story_feed_uri = parsed["storyFeedUrl"]
     self
+  end
+
+  private
+
+  def has_stories?
+    story_feed_uri != NOT_AVAILABLE_YET
   end
 end
