@@ -31,22 +31,8 @@ class Company
   end
 
   def retrieve_data
-    parsed = JSON.parse(CompanyDetailsReader.new(tickerCode).retrieve_data)
-    @latest_price   = parsed["latestPrice"]
-    @price_units    = parsed["priceUnits"]
-    @as_of          = parsed["asOf"]
-    @story_feed_uri = parsed["storyFeedUrl"]
-
-    if has_stories?
-      stories = JSON.parse(CompanyNewsFeedRader.new(story_feed_uri).retrieve_data)
-      stories.each do |story|
-        add_story(Story.new(
-          id: story["id"],
-          headline: story["headline"],
-          body: story["body"])
-        )
-      end
-    end
+    set_primary_details_from_parsed
+    set_stories_from_parsed if has_stories?
     self
   end
 
@@ -55,6 +41,21 @@ class Company
   end
 
   private
+
+  def set_primary_details_from_parsed
+    parsed = JSON.parse(CompanyDetailsReader.new(tickerCode).retrieve_data)
+    @latest_price   = parsed["latestPrice"]
+    @price_units    = parsed["priceUnits"]
+    @as_of          = parsed["asOf"]
+    @story_feed_uri = parsed["storyFeedUrl"]
+  end
+
+  def set_stories_from_parsed
+    stories = JSON.parse(CompanyNewsFeedRader.new(story_feed_uri).retrieve_data)
+    stories.each do |story|
+      add_story(Story.new(id: story["id"], headline: story["headline"], body: story["body"]))
+    end
+  end
 
   def add_story(story)
     @latest_stories = latest_stories.append(story)
