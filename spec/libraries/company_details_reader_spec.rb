@@ -1,5 +1,3 @@
-require 'company_details_reader'
-
 describe CompanyDetailsReader do
   let(:reader)      { CompanyDetailsReader.new('AAPL')                           }
   let(:request_uri) { (CompanyDetailsReader::BASE_URI + reader.ticker_code).to_s }

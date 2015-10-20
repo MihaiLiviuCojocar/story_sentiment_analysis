@@ -1,5 +1,3 @@
-require 'story'
-
 describe Story do
   let(:story) { Story.new(id: 12, headline: 'Some headline', body: 'Some text body') }
 
