@@ -3,6 +3,16 @@ class Story
 
   POSITIVE_WORDS = ['positive', 'success', 'grow', 'gains', 'happy', 'healthy'       ]
   NEGATIVE_WORDS = ['dissapointing', 'concerns', 'decline', 'drag', 'slump', 'feared']
+  
+  POSITIVE_RANGE = Range.new(2,Float::INFINITY)
+  NEGATIVE_RANGE = Range.new(-Float::INFINITY,-1)
+  NEUTRAL_RANGE  = Range.new(0,1)
+
+  SENTIMENTS = {
+    POSITIVE_RANGE => :positive,
+    NEGATIVE_RANGE => :negative,
+    NEUTRAL_RANGE  => :neutral
+  }
 
   def initialize(args = {})
     @id       = args[:id]
@@ -15,9 +25,7 @@ class Story
   end
 
   def sentiment_analysis
-    return :positive if positivity_score >= 2
-    return :negative if positivity_score < 0
-    return :neutral
+    SENTIMENTS.find { |range, sentiment| range.include?(positivity_score) }.last
   end
 
   private
