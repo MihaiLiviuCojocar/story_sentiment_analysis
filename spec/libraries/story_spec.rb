@@ -74,4 +74,21 @@ describe Story do
       expect(story.sentiment_analysis).to eq :negative
     end
   end
+
+  context 'unicode for sentiment face' do
+    it 'returns the unicode for a smile face given a positive sentiment' do
+      story = Story.new(id: 12, headline: 'Some headline', body: 'positive healthy grow')
+      expect(story.sentiment_face_unicode).to eq '&#128516;'
+    end
+
+    it 'returns the unicode for a neutral face given a neutral sentiment' do
+      story = Story.new(id: 12, headline: 'Some headline', body: 'some neutral words')
+      expect(story.sentiment_face_unicode).to eq '&#128528;'
+    end
+
+    it 'returns the unicode for a frowning face given a negative sentiment' do
+      story = Story.new(id: 12, headline: 'Some headline', body: 'dissapointing decline')
+      expect(story.sentiment_face_unicode).to eq '&#128550;'
+    end
+  end
 end

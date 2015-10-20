@@ -14,6 +14,12 @@ class Story
     NEUTRAL_RANGE  => :neutral
   }
 
+  SENTIMENT_FACES = {
+    positive: '&#128516;',
+    negative: '&#128550;',
+    neutral:  '&#128528;'
+  }
+
   def initialize(args = {})
     @id       = args[:id]
     @headline = args[:headline]
@@ -26,6 +32,10 @@ class Story
 
   def sentiment_analysis
     SENTIMENTS.find { |range, sentiment| range.include?(positivity_score) }.last
+  end
+
+  def sentiment_face_unicode
+    SENTIMENT_FACES[sentiment_analysis]
   end
 
   private
