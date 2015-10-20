@@ -23,10 +23,6 @@ class Story
     @body     = args[:body]
   end
 
-  def positivity_score
-    normalised_words.reduce(0) { |memo, word| memo + word.sentiment_score }
-  end
-
   def sentiment_analysis
     SENTIMENTS.find { |range, sentiment| range.include?(positivity_score) }.last
   end
@@ -36,6 +32,10 @@ class Story
   end
 
   private
+  
+  def positivity_score
+    normalised_words.reduce(0) { |memo, word| memo + word.sentiment_score }
+  end
 
   def normalised_words
     body.split(/\W+/).map(&:downcase)
