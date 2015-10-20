@@ -1,5 +1,3 @@
-require 'company_news_feed_reader'
-
 describe CompanyNewsFeedRader do
   let(:uri)    { 'some_uri'                    }
   let(:reader) { CompanyNewsFeedRader.new(uri) }
