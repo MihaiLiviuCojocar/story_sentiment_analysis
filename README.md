@@ -18,10 +18,10 @@ Create an application to display the following information about a company:
 
 2. Download/copy/clone the repo.
 
-3. In the terminal,where you have the folder run:
+3. In the terminal, change directory into 'tech_test':
 
  ```ruby
- cd tech-test
+ cd tech_test
  bundle install
  ```
 
@@ -57,7 +57,7 @@ Create an application to display the following information about a company:
 
 - clean, maintainable code.
 - [MVC](https://en.wikipedia.org/wiki/Model–view–controller) design.
-- followed SOLID principles.
+- followed [SOLID](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)) software design principles.
 - short and readable methods.
 - skinny controllers.
 - no logic in the views.
