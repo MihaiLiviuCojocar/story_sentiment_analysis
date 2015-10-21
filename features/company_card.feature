@@ -19,10 +19,10 @@ Feature: Company card
 
   Scenario: The company is found but there is no story feed
     Then I should see:
-      | Ticker Code    | AAPL        |
-      | £              | 1945        |
-      |                | 2014-10-19  |
-      | Latest Stories | N/A         |
+      | Ticker Code    | AAPL                      |
+      | £              | 1945                      |
+      |                | Sun Oct 19 14:06:52 2014  |
+      | Latest Stories | N/A                       |
 
   Scenario: The company is found and it has a story feed
     Given A company
@@ -31,12 +31,12 @@ Feature: Company card
     And I visit the homepage
     When I click on "Google Inc"
     Then I should see:
-      | Ticker Code    | GOOG            |
-      | £              | 54407           |
-      |                | 2015-10-19      |
-      | Latest Stories |                 |
-      | Going strong   | Apple Inc is    |
-      | Google revenue | Stocks finished |
+      | Ticker Code    | GOOG                          |
+      | £              | 54407                         |
+      |                | Mon Oct 19 15:23:23 2015      |
+      | Latest Stories |                               |
+      | Going strong   | Apple Inc is                  |
+      | Google revenue | Stocks finished               |
 
 
 
