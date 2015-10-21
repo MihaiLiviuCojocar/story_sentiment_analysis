@@ -20,5 +20,10 @@ describe String do
         expect(unmarked_word.sentiment_score).to eq 0
       end
     end
+
+    it 'returns a score of 1 given a capitalized positive word' do
+      positivie_capitalized_word = String::POSITIVE_WORDS.first.capitalize
+      expect(positivie_capitalized_word.sentiment_score).to eq 1
+    end
   end
 end

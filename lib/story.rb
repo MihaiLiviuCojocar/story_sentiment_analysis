@@ -38,6 +38,6 @@ class Story
   end
 
   def normalised_words
-    body.split(/\W+/).map(&:downcase)
+    body.split(/\W+/)
   end
 end

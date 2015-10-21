@@ -15,10 +15,10 @@ class String
   private
 
   def relevant_for_analysis?
-    SCORES.keys.flatten.include?(self)
+    SCORES.keys.flatten.include?(self.downcase)
   end
 
   def score
-    SCORES.find { |words, score| words.include?(self) }.last
+    SCORES.find { |words, score| words.include?(self.downcase) }.last
   end
 end
