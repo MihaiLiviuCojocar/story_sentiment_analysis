@@ -40,3 +40,7 @@ end
 When(/^I visit "([^"]*)"$/) do |url|
   visit url
 end
+
+Given(/^There is no company in the DB$/) do
+  expect(Company.all.to_a.empty?).to be true
+end

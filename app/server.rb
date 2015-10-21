@@ -17,7 +17,11 @@ class TechTest < Sinatra::Base
 
   get '/companies/:ticker_code' do
     @company = Company.where(tickerCode: params[:ticker_code].upcase).first
-    @company.retrieve_data
-    haml :"companies/show"
+    if @company
+      @company.retrieve_data
+      haml :"companies/show"
+    else
+      404
+    end
   end
 end
