@@ -27,3 +27,12 @@ Then(/^I should see:$/) do |table|
     expect(page).to have_content value
   end
 end
+
+Given(/^I want to visit a page that does not exist$/) do
+  visit '/some_random_uri'
+end
+
+Then(/^I shoud be informed that the page could not be found$/) do
+  expect(page).to have_content 'Booom!!!'
+  expect(page).to have_content 'Page Not Found'
+end
