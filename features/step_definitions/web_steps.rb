@@ -36,3 +36,7 @@ Then(/^I shoud be informed that the page could not be found$/) do
   expect(page).to have_content 'Booom!!!'
   expect(page).to have_content 'Page Not Found'
 end
+
+When(/^I visit "([^"]*)"$/) do |url|
+  visit url
+end
