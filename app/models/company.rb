@@ -43,11 +43,11 @@ class Company
   private
 
   def set_primary_details_from_parsed
-    parsed = JSON.parse(CompanyDetailsReader.new(tickerCode).retrieve_data)
-    @latest_price   = parsed["latestPrice"]
-    @price_units    = parsed["priceUnits"]
-    @as_of          = parsed["asOf"]
-    @story_feed_uri = parsed["storyFeedUrl"]
+    company = JSON.parse(CompanyDetailsReader.new(tickerCode).retrieve_data)
+    @latest_price   = company["latestPrice"]
+    @price_units    = company["priceUnits"]
+    @as_of          = company["asOf"]
+    @story_feed_uri = company["storyFeedUrl"]
   end
 
   def set_stories_from_parsed
