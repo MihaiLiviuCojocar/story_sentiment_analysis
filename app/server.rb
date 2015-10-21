@@ -6,7 +6,7 @@ class TechTest < Sinatra::Base
   set :public_folder, Proc.new { File.join(root, "../public") }
 
   get '/' do
-    @companies = Company.order_by(:name => 'asc')
+    @companies = Company.order_by(name: 'asc')
     haml :"companies/index"
   end
 
