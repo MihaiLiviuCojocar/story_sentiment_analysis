@@ -19,7 +19,8 @@ class Company
   end
 
   def as_of
-    @as_of || NOT_AVAILABLE_YET
+    return DateTime.parse(@as_of).asctime if @as_of
+    NOT_AVAILABLE_YET
   end
 
   def price_units
