@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Company do
   let(:company) { Company.new(name: 'Apple Inc', tickerCode: 'APPL') }
 
