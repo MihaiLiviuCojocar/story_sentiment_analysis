@@ -7,7 +7,7 @@ Create an application to display the following information about a company:
  * The two most recent stories
  * The sentiment analysis of each story
 
-## Instalation
+## Installation
 
 ### Mac OS X
 
@@ -27,11 +27,11 @@ Create an application to display the following information about a company:
 
 ## Running the tests
 
-#### Rspec(unit tests)
+#### Rspec (unit tests)
 
 - run `rspec`.
 
-#### Cucumber(feature tests)
+#### Cucumber (feature tests)
 
 - run `cucumber`.
 
@@ -69,6 +69,6 @@ Create an application to display the following information about a company:
 
 ### Personal notes
 
-- this is a fun technical test, not boring like building a shopping cart for example.
-- it has many small problems to fix, which keep the interest going.
+- this is a fun technical test
+- it had many small problems to fix, which kept my interest going.
 - this is the most fun technical test that I've ever done.
