@@ -14,15 +14,14 @@ Feature: Company card
   Scenario: The company is not found on the external web service
     Then I should see:
       | Ticker Code    | AAPL |
-      | Latest Price   | N/A  |
-      | As Of          | N/A  |
+      | £              | N/A  |
       | Latest Stories | N/A  |
 
   Scenario: The company is found but there is no story feed
     Then I should see:
       | Ticker Code    | AAPL        |
-      | Latest Price   | 1945        |
-      | As Of          | 2014-10-19  |
+      | £              | 1945        |
+      |                | 2014-10-19  |
       | Latest Stories | N/A         |
 
   Scenario: The company is found and it has a story feed
@@ -33,13 +32,11 @@ Feature: Company card
     When I click on "Google Inc"
     Then I should see:
       | Ticker Code    | GOOG            |
-      | Latest Price   | 54407           |
-      | As Of          | 2015-10-19      |
+      | £              | 54407           |
+      |                | 2015-10-19      |
       | Latest Stories |                 |
-      | Headline       | Going strong    |
-      | Body           | Apple Inc is    |
-      | Headline       | Google revenue  | 
-      | Body           | Stocks finished |
+      | Going strong   | Apple Inc is    |
+      | Google revenue | Stocks finished |
 
 
 
