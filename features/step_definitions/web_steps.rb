@@ -33,7 +33,6 @@ Given(/^I want to visit a page that does not exist$/) do
 end
 
 Then(/^I shoud be informed that the page could not be found$/) do
-  expect(page).to have_content 'Booom!!!'
   expect(page).to have_content 'Page Not Found'
 end
 
