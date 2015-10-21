@@ -1,3 +1,90 @@
-.container {
-  background: red !important;
+p {
+  padding: 10px;
+}
+
+header.stories {
+  padding: 10px;
+}
+
+.headline {
+  padding: 20px;
+}
+
+.title {
+  border-bottom: solid;
+  border-width: 3px;
+}
+
+#card {
+  border-style: solid;
+  border-width: 3px;
+  margin: 0 auto;
+  width: 45%;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.content {
+  margin: 0 auto;
+  width: 75%;
+}
+
+.currency {
+  font-size: 10px;
+}
+
+article {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.price {
+  font-size: 20px;
+  width: 100%;
+  display: inline-block;
+}
+
+.pound {
+  text-align: center;
+  font-size: 20px;
+  width: 25%;
+}
+
+.latest-price {
+  width: 80;
+  float: right;
+}
+
+.positive {
+  background-color: #80ffec;
+}
+
+.neutral {
+  background-color: #e5f9b9;
+}
+
+.negative {
+  background-color: #ffc2c2;
+}
+
+.stock-details {
+  padding: 5px;
+  width: 100%;
+  display: inline-block;
+  border-bottom: solid;
+  border-width: 1px;
+}
+
+.ticker-code {
+  width: 50%;
+}
+
+.stock-info {
+  width: 50%;
 }

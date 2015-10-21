@@ -1,6 +1,36 @@
 %main.container
-  %section.card
-    %header
-      %h1
+  %section#card
+    %header.title
+      %h1.text-center
         = @company.name
-    %section.content
+    %section.stock-details
+      %section.ticker-code.float-left
+        %h3
+          Ticker Code: 
+          = @company.tickerCode
+      %section.stock-info.float-left
+        %section.price
+          %section.currency.float-right
+            = @company.price_units
+          %section.pound.float-right
+            = @company.latest_price
+          %section.latest-price
+            £
+        %footer.float-right
+          = @company.as_of
+    %section
+      %header.stories
+        %h4
+          Latest Stories
+      - if @company.has_stories?
+        - @company.latest_stories.each do |story|
+          %article
+            %header.text-center
+              %strong.headline
+                = story.headline
+              = story.sentiment_face_unicode
+            %section
+              %p{class: story.sentiment_analysis}
+                = story.body
+      - else
+        %p N/A
