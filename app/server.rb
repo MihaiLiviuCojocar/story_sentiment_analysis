@@ -3,6 +3,8 @@ require 'tilt/haml'
 require './db_config/env'
 
 class TechTest < Sinatra::Base
+  set :public_folder, Proc.new { File.join(root, "../public") }
+
   get '/' do
     @companies = Company.all.to_a
     haml :"companies/index"
