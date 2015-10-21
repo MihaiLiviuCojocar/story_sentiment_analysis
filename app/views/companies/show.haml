@@ -1,0 +1,28 @@
+%main.container
+  %section.table-responsive.col-md-6
+    %table.table
+      %thead
+        %tr
+          %th= @company.name
+        %tr
+          %td Ticker Code
+          %td= @company.tickerCode
+        %tr
+          %td Latest Price
+          %td= @company.latest_price
+        %tr
+          %td As Of
+          %td= @company.as_of
+        %tr
+          %th Latest Stories
+          - if @company.has_stories?
+            - @company.latest_stories.each do | story |
+              %tr
+                %td Headline
+                %td= story.headline
+                %td= story.sentiment_face_unicode
+              %tr
+                %td Body
+                %td= story.body
+          - else
+            %td N/A

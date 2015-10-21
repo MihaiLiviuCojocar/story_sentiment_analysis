@@ -1,0 +1,21 @@
+HTTP/1.1 200 OK
+Server: Cowboy
+Content-Length: 470
+Connection: keep-alive
+X-Powered-By: Express
+Etag: W/"586zxKMn7Yd1ibWLpz6WUA=="
+Date: Mon, 19 Oct 2015 20:36:42 GMT
+Via: 1.1 vegur
+
+[
+  {
+    "id": 12,
+    "headline": "Going strong",
+    "body": "Apple Inc is rapidly making ground ..."
+  },
+  {
+    "id": 17,
+    "headline": "Google revenue",
+    "body": "Stocks finished sharply lower in New York ..."
+  }
+]

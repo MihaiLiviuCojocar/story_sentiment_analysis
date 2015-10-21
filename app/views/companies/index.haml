@@ -8,5 +8,5 @@
     - @companies.each do |company|
       %tr
         %td
-          %a(href="#")= company.name
+          %a(href="/companies/#{company.tickerCode}")= company.name
         %td= company.tickerCode

@@ -1,7 +1,9 @@
 Feature: Displaying the companies
 
   Background:
-    Given A company called "Apple Inc" has been added
+    Given A company
+      | name      | ticker_code |
+      | Apple Inc | AAPL        |
 
   Scenario: Companies have been added to the DB
     When I visit the homepage
