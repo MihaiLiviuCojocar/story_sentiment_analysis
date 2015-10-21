@@ -1,6 +1,4 @@
-require 'mongoid'
-require './app/models/company'
-Dir["./lib/*.rb"].each {|file| require file }
+Dir["./app/models/*.rb"].each {|file| require file }
 
 env = ENV['RACK_ENV'] || 'development'
 

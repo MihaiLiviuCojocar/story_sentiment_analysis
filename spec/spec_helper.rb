@@ -1,5 +1,4 @@
-Dir["./lib/*.rb"].each {|file| require file }
-require './app/models/company'
+Dir["./app/models/*.rb"].each {|file| require file }
 require 'webmock/rspec'
 
 RSpec.configure do |config|
