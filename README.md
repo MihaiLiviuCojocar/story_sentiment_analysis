@@ -22,7 +22,7 @@ Create an application to display the following information about a company:
 
 3. In the terminal,where you have the folder run:
 
- ```
+ ```bash
  cd tech-test
  bundle install
  ```
@@ -44,11 +44,11 @@ Create an application to display the following information about a company:
 
 ### Technologies used
 
-- [Ruby](https://en.wikipedia.org/wiki/Ruby_(programming_language).
-- [Sinatra](https://en.wikipedia.org/wiki/Sinatra_(software).
+- [Ruby](https://en.wikipedia.org/wiki/Ruby_(programming_language)).
+- [Sinatra](https://en.wikipedia.org/wiki/Sinatra_(software)).
 - [MongoDB](https://www.mongodb.org).
 - [Rspec](https://en.wikipedia.org/wiki/RSpec).
-- [Cucumber](https://en.wikipedia.org/wiki/Cucumber_(software).
+- [Cucumber](https://en.wikipedia.org/wiki/Cucumber_(software)).
 - HTML/CSS.
 - [HAML](https://en.wikipedia.org/wiki/Haml).
 - [Bootstrap](http://getbootstrap.com).
