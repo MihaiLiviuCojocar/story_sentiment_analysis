@@ -12,17 +12,15 @@ Create an application to display the following information about a company:
 ### Mac OS X
 
 1. You will need a few things installed:
-
   - A Ruby package manager, like [RVM](https://rvm.io/rvm/install).
   - [MongoDB](https://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/).
   - [Bundler](https://github.com/bundler/bundler).
-
 
 2. Download/copy/clone the repo.
 
 3. In the terminal,where you have the folder run:
 
- ```bash
+ ```ruby
  cd tech-test
  bundle install
  ```
