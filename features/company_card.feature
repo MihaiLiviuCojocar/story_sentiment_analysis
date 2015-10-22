@@ -37,7 +37,3 @@ Feature: Company card
       | Latest Stories |                               |
       | Going strong   | Apple Inc is                  |
       | Google revenue | Stocks finished               |
-
-
-
-

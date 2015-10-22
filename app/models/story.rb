@@ -32,7 +32,7 @@ class Story
   end
 
   private
-  
+
   def positivity_score
     normalised_words.reduce(0) { |memo, word| memo + word.sentiment_score }
   end
