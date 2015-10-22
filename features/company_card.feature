@@ -21,7 +21,7 @@ Feature: Company card
     Then I should see:
       | Ticker Code    | AAPL                      |
       | £              | 1945                      |
-      |                | Sun Oct 19 14:06:52 2014  |
+      |                | Sun Oct 19 15:06:52 2014  |
       | Latest Stories | N/A                       |
 
   Scenario: The company is found and it has a story feed
@@ -33,7 +33,7 @@ Feature: Company card
     Then I should see:
       | Ticker Code    | GOOG                          |
       | £              | 54407                         |
-      |                | Mon Oct 19 15:23:23 2015      |
+      |                | Mon Oct 19 16:23:23 2015      |
       | Latest Stories |                               |
       | Going strong   | Apple Inc is                  |
       | Google revenue | Stocks finished               |

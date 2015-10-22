@@ -72,7 +72,7 @@ describe Company do
       end
 
       it 'has the time set to found value' do
-        expect(company.as_of).to eq 'Sun Oct 19 14:06:52 2014'
+        expect(company.as_of).to eq 'Sun Oct 19 15:06:52 2014'
       end
     end
 

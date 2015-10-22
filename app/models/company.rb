@@ -22,7 +22,7 @@ class Company
   end
 
   def as_of
-    return DateTime.parse(@as_of).asctime if @as_of
+    return normalised_time if time_set?
     NOT_AVAILABLE_YET
   end
 
@@ -69,5 +69,13 @@ class Company
 
   def add_story(story)
     @latest_stories = latest_stories.append(story)
+  end
+
+  def normalised_time
+    DateTime.parse(@as_of).to_time.localtime.asctime
+  end
+
+  def time_set?
+    @as_of
   end
 end
