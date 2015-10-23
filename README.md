@@ -69,6 +69,6 @@ Create an application to display the following information about a company:
 
 ### Personal notes
 
-- this is a fun technical test
+- this is a fun technical test.
 - it had many small problems to fix, which kept my interest going.
 - this is the most fun technical test that I've ever done.
